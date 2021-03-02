@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+
+
+int main() {
+  int vector[5]={3,9,5,7,10};
+ int i,j,aux,min;
+
+//imprime los elementos del arreglo
+for (i=0; i<5; i++)
+{
+  cout<<vector[i]<<"|";
+}
+
+
+//ordenamiento por seleccion
+  for (i=0; i<5; i++)
+  {
+    min=i;
+    for (j=i+1; j<5; j++)
+    {
+      if (vector[j] < vector[min])
+      {
+       min=j;
+      }
+    }
+    cout<<endl;
+
+    aux=vector[i];
+    vector[i]=vector[min];
+    vector[min]=aux;
+  }
+
+//imprime los elementos ordenados
+
+for (i=0; i<5; i++)
+{
+  cout<<vector[i]<<"|";
+}
+
+}
+
