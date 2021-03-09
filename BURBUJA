@@ -1,0 +1,73 @@
+#include <iostream>
+using namespace std;
+
+
+
+void ingresar (int vector[], int tamanio);
+void ordenar (int vector[], int tamanio);
+void imprimir (int vector[], int tamanio);
+
+
+int main() {
+  int op;
+  int vector1[100];
+  int tamanio;
+  cout<<"Ingresar el tamaño del vector: ";
+    cin>>tamanio;
+    ingresar(vector1,tamanio);
+    cout<<endl;
+    cout<<"Los elementos del vector son:"<<endl;
+    imprimir(vector1,tamanio);
+    cout<<endl;
+    cout<<"Los elementos ordenados del vector son:"<<endl;
+    ordenar(vector1,tamanio);
+    cout<<endl;
+    imprimir(vector1,tamanio);
+}
+
+void ingresar (int vector[], int tamanio)
+{
+    int i;
+
+    for (i=0 ; i<tamanio ; i++)
+    {
+        cout<<"Ingresar los elementos del vector "<<i+1<<": ";
+        cin>>vector[i];
+    }
+
+}
+
+void ordenar (int vector[], int tamanio)
+{
+    int aux;
+    for (int i=0 ; i<tamanio ; i++)
+    {
+        for(int j=i+1 ; j<tamanio ; j++)
+        {
+            if(vector[j]<vector[i])
+            {
+                aux=vector[i];
+
+                vector[i]=vector[j];
+
+                vector[j]=aux;
+
+            }
+
+        }
+    }
+
+
+}
+
+
+void imprimir(int vector[], int tamanio)
+{
+    int i;
+    for (i=0 ; i<tamanio; i++)
+    {
+      
+        cout<<"|"<<vector[i]<<"|";
+    }
+
+}
